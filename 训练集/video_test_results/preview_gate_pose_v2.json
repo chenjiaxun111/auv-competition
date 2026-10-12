@@ -1,0 +1,24 @@
+{
+  "video": "/home/cjx/cjx_project/auv比赛/训练集/preview.mp4",
+  "model": "/home/cjx/cjx_project/auv比赛/训练集/1/training_runs/gate_yolo11n_pose_v2/weights/best.pt",
+  "output": "/home/cjx/cjx_project/auv比赛/训练集/video_test_results/preview_gate_pose_v2.mp4",
+  "thresholds": {
+    "box_confidence": 0.5,
+    "minimum_keypoint_confidence": 0.5
+  },
+  "frames": 9415,
+  "detected_frames": 4493,
+  "detected_frame_ratio": 0.4772172065852363,
+  "valid_pose_frames": 1735,
+  "valid_pose_frame_ratio": 0.18428040361125864,
+  "multiple_detection_frames": 132,
+  "instances": 4630,
+  "valid_instances": 1740,
+  "mean_box_confidence": 0.9058094461973492,
+  "mean_minimum_keypoint_confidence": 0.4101140490802201,
+  "p05_minimum_keypoint_confidence": 0.00023509617676609198,
+  "mean_inference_ms": 3.70283661137196,
+  "p95_inference_ms": 4.029537178575993,
+  "wall_time_s": 64.82207434205338,
+  "processing_fps": 145.24373210148892
+}

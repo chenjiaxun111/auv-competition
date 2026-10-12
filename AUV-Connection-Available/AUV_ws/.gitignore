@@ -1,0 +1,33 @@
+# --- ROS 2 相关 ---
+install/
+build/
+log/
+
+# --- yolo模型 ---
+*.pt
+# --- Python 相关 ---
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- VS Code 相关 ---
+.vscode/
+*.code-workspace
+
+# --- 传感器与数据记录 ---
+# 如果你录制了很大的原始数据包（如 .mcap 或 .bag），建议忽略，否则 GitHub 传不上去
+*.mcap
+*.bag
+raw_data/
+*.png
+*.pdf
+*.txt
+
+# --- 操作系统临时文件 ---
+.DS_Store
+Thumbs.db
+
+#---实验数据以及文献---
+*.png
+*.pdf
+参考文献/

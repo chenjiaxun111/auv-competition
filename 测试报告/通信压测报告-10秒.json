@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "failure_reasons": [],
+  "interrupted": false,
+  "started_utc": "2026-09-14T04:41:12.509276+00:00",
+  "elapsed_s": 10.000075333024142,
+  "elapsed_with_final_zero_s": 10.279118575999746,
+  "target": {
+    "host": "192.168.137.219",
+    "port": 8888,
+    "rpc_timeout_s": 0.2,
+    "duration_s": 10.0,
+    "move_rate_hz": 20.0,
+    "telemetry_rate_hz": 10.0,
+    "expected_rpc_rate_hz": 40.0,
+    "motion_command": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "yaw": 0.0
+    }
+  },
+  "requests": {
+    "total": 400,
+    "success": {
+      "move": 200,
+      "status": 100,
+      "pid_runtime_status": 100
+    },
+    "failures": 0,
+    "max_consecutive_failures": 0,
+    "achieved_move_rate_hz": 19.99984933508672,
+    "achieved_telemetry_rate_hz": 9.99992466754336,
+    "skipped_move_slots": 0,
+    "skipped_telemetry_slots": 0
+  },
+  "latency": {
+    "move": {
+      "count": 200,
+      "mean_ms": 1.6835443598392885,
+      "p50_ms": 1.5921550075290725,
+      "p95_ms": 2.146620040002744,
+      "p99_ms": 2.214993854577187,
+      "max_ms": 2.27075899601914
+    },
+    "status": {
+      "count": 100,
+      "mean_ms": 1.567049780569505,
+      "p50_ms": 1.5241380024235696,
+      "p95_ms": 1.6554279849515297,
+      "p99_ms": 1.719820379803433,
+      "max_ms": 3.679165994981304
+    },
+    "pid_runtime_status": {
+      "count": 100,
+      "mean_ms": 1.6344323108205572,
+      "p50_ms": 1.6297560068778694,
+      "p95_ms": 1.6639784502331165,
+      "p99_ms": 1.7342338224989362,
+      "max_ms": 1.740253996104002
+    }
+  },
+  "scheduling": {
+    "move_interval": {
+      "count": 199,
+      "mean_ms": 49.97289125619213,
+      "p50_ms": 49.99998398125172,
+      "p95_ms": 50.01671699574217,
+      "p99_ms": 50.19359225756489,
+      "max_ms": 50.19416499999352
+    },
+    "move_lateness": {
+      "count": 200,
+      "mean_ms": 0.11367168466676958,
+      "p50_ms": 0.07850247493479401,
+      "p95_ms": 0.09368194878334178,
+      "p99_ms": 0.27141775412019337,
+      "max_ms": 5.470621021231636
+    },
+    "telemetry_lateness": {
+      "count": 100,
+      "mean_ms": 1.8233257930842228,
+      "p50_ms": 1.732868593535386,
+      "p95_ms": 2.288109323126264,
+      "p99_ms": 2.3901918451883835,
+      "max_ms": 2.5161108060274273
+    }
+  },
+  "errors": [],
+  "final_zero_submissions": [
+    {
+      "ok": true,
+      "latency_ms": 1.5422340075019747
+    },
+    {
+      "ok": true,
+      "latency_ms": 1.5455939865205437
+    },
+    {
+      "ok": true,
+      "latency_ms": 1.534362992970273
+    }
+  ],
+  "final_zero_verified": true,
+  "final_zero_error": null
+}

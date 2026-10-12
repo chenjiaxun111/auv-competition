@@ -1,0 +1,37 @@
+{
+    "_comment": "上位机可配置的深度与航向PID参数；程序启动时读取，点击保存后覆盖",
+    "controllers": {
+        "depth_position": {
+            "p": 5, "i": 5, "d": 5, "p_enabled": 1, "i_enabled": 0, "d_enabled": 0,
+            "output_limit": 5.0,
+            "integral_limit_enabled": 1, "integral_limit": 100.0,
+            "integral_separation_enabled": 1, "integral_separation_error": 5
+        },
+        "depth_speed": {
+            "p": 50, "i": 3, "d": 1, "p_enabled": 1, "i_enabled": 0, "d_enabled": 0,
+            "output_limit": 5.0,
+            "integral_limit_enabled": 1, "integral_limit": 500.0,
+            "integral_separation_enabled": 1, "integral_separation_error": 5
+        },
+        "yaw_angle": {
+            "p": 40, "i": 10, "d": 10, "p_enabled": 1, "i_enabled": 0, "d_enabled": 0,
+            "output_limit": 130.0,
+            "integral_limit_enabled": 1, "integral_limit": 200.0,
+            "integral_separation_enabled": 1, "integral_separation_error": 100
+        },
+        "yaw_gyro": {
+            "p": 10, "i": 5, "d": 0, "p_enabled": 1, "i_enabled": 0, "d_enabled": 0,
+            "output_limit": 500,
+            "integral_limit_enabled": 1, "integral_limit": 100.0,
+            "integral_separation_enabled": 0, "integral_separation_error": 100
+        }
+    },
+    "devices": {
+        "robot_arm": {
+            "_comment": "机械臂普通PWM设备参数",
+            "min_pwm": 700,
+            "max_pwm": 2300,
+            "speed": 50
+        }
+    }
+}

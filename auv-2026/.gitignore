@@ -1,0 +1,41 @@
+# CMake build output
+/build/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Generated program and binary files
+/rovmaster
+*.d
+*.o
+*.obj
+*.elf
+*.a
+*.la
+*.lo
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.out
+*.map
+
+# Runtime and temporary files
+*.log
+*.tmp
+*.swp
+*~
+.tmp_versions/
+tmp/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local test helper
+jsonrpc.py

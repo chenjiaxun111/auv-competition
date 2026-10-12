@@ -1,0 +1,9 @@
+# 由 prepare_all_yolo11_dataset.py 自动生成
+path: /home/cjx/cjx_project/auv比赛/训练集/1/all_yolo11_dataset
+train: images/train
+val: images/val
+
+names:
+  0: red_ball
+  1: gate
+  2: blue_ball

@@ -1,0 +1,65 @@
+# 图片（包含大小写扩展名）
+*.[jJ][pP][gG]
+*.[jJ][pP][eE][gG]
+*.[pP][nN][gG]
+*.[bB][mM][pP]
+*.[gG][iI][fF]
+*.[wW][eE][bB][pP]
+*.[tT][iI][fF]
+*.[tT][iI][fF][fF]
+*.[hH][eE][iI][cC]
+
+# 视频与 ZED 原始录像
+*.[mM][pP]4
+*.[aA][vV][iI]
+*.[mM][oO][vV]
+*.[mM][kK][vV]
+*.[wW][eE][bB][mM]
+*.[mM]4[vV]
+*.[fF][lL][vV]
+*.[wW][mM][vV]
+*.[mM][pP][gG]
+*.[mM][pP][eE][gG]
+*.[tT][sS]
+*.[sS][vV][oO]
+*.[sS][vV][oO]2
+
+# 日志、滚动日志及 ROS 录包
+*.log
+*.LOG
+*.log.*
+*.LOG.*
+log/
+logs/
+*.bag
+*.db3
+*.db3-shm
+*.db3-wal
+*.mcap
+# 逐帧控制记录和训练指标属于生成日志；保留标注/抽帧清单 CSV
+*_commands.csv
+训练集/**/training_runs/**/results.csv
+
+# 自动生成的构建产物与 Python 缓存
+build/
+install/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# 压缩数据包也可能包含图片、视频和日志，不上传重复归档
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.partial-download
+
+# 本机编辑器设置与临时文件
+.vscode/
+/tmp/
+
+# 保留源码、配置、Markdown 说明、标注和 CSV/JSON 清单。
+# 不整体忽略训练集或测试报告目录，避免漏上传其中的脚本和说明。

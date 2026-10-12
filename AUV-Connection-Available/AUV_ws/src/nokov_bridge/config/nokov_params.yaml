@@ -1,0 +1,31 @@
+/**:
+  ros__parameters:
+    # vrpn_mocap 订阅设置
+    tracker_name: "ROV"
+    sensor_id: 0
+    vrpn_namespace: "/vrpn_mocap"
+
+    # TF 坐标系名称
+    nokov_world_frame: "nokov_world"
+    map_frame: "map"
+    odom_frame: "odom"
+    robot_frame: "base_link"
+
+    # 单位转换: Nokov 输出 mm → ROS 使用 m
+    scale: 0.001
+
+    # 坐标系修正
+    # Nokov 标准: X-前 Y-左 Z-上 (右手系)
+    # ROS 水下惯例: X-前 Y-左 Z-下 (深度)
+    invert_z: false    # Z 轴不翻转 (保持与 Nokov 一致, Z-up)
+    invert_y: false    # Y 轴翻转
+    swap_xy: false     # 交换 XY 轴
+
+    # 水池 map 原点相对 Nokov 原点的偏移 (m)；
+    #做原点初始化时将动捕获得的rov原始坐标取反填入下方
+    offset_x: 0.014
+    offset_y: -0.472
+    offset_z: -0.363
+    offset_roll: 0.0
+    offset_pitch: 0.0
+    offset_yaw: 0.0

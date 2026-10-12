@@ -1,0 +1,143 @@
+competition_controller:
+  ros__parameters:
+    target_ball_color: red
+    # After successful arm/connection: zero for 30 s, straight surge for 5 s,
+    # then begin the normal mission. Not a calibrated 5-second travel distance.
+    startup_delay_s: 30.0
+    departure_duration_s: 5.0
+    departure_surge: 20.0
+    red_ball_class: red_ball
+    blue_ball_class: blue_ball
+    gate_class: gate
+    required_gate_count: 1
+    require_bridge_connection: true
+
+    # This robot currently has no usable pressure/depth sensor. In this mode
+    # the planner skips absolute DIVE and directly commands vertical thrusters
+    # only while a fresh visual target is present.
+    vertical_control_mode: visual_heave
+
+    initial_depth_m: 0.60
+    minimum_depth_m: 0.15
+    maximum_depth_m: 1.10
+    depth_tolerance_m: 0.06
+    dive_stable_s: 1.0
+
+    target_timeout_s: 0.35
+    detection_confirmations: 3
+    minimum_confidence: 0.45
+    gate_minimum_confidence: 0.50
+    gate_minimum_keypoint_confidence: 0.50
+    control_rate_hz: 20.0
+
+    search_yaw: 8.0
+    yaw_kp: 28.0
+    yaw_kd: 4.0
+    maximum_yaw: 20.0
+    sway_kp: 30.0
+    maximum_sway: 25.0
+    range_kp: 45.0
+    maximum_approach_surge: 45.0
+
+    alignment_yaw_rad: 0.08
+    alignment_x_m: 0.12
+    alignment_y_m: 0.10
+    alignment_stable_s: 0.50
+    visual_depth_rate: 0.25
+    maximum_depth_rate_mps: 0.10
+
+    # Conservative first-test values. With bridge max_heave=250, the 40-unit
+    # cap becomes at most 0.16 at the NanoPi move(z=...) interface.
+    visual_heave_kp: 35.0
+    visual_heave_kd: 0.0
+    maximum_visual_heave: 40.0
+    visual_heave_deadband: 0.04
+    visual_heave_slew_rate: 80.0
+    ball_vertical_full_scale_rad: 0.35
+    ball_vertical_alignment_rad: 0.08
+
+    # Gate YOLO-Pose visual servo. Signed centre errors use [-1, 1].
+    gate_alignment_bearing_rad: 0.08
+    gate_alignment_x_norm: 0.10
+    gate_alignment_y_norm: 0.10
+    gate_realign_x_norm: 0.22
+    gate_realign_bearing_rad: 0.16
+    gate_sway_kp: 24.0
+    gate_visual_depth_rate: 0.20
+    gate_no_range_surge: 18.0
+    gate_stop_width_norm: 0.70
+    gate_commit_width_norm: 0.58
+    gate_loss_commit_timeout_s: 0.55
+    gate_maximum_pnp_range_m: 8.0
+
+    ball_hit_distance_m: 0.32
+    hit_surge: 60.0
+    hit_duration_s: 1.0
+    retreat_surge: -30.0
+    retreat_duration_s: 1.0
+
+    gate_pass_trigger_m: 1.0
+    pass_surge: 55.0
+    pass_duration_s: 2.5
+
+    # Limit repeated absolute-depth requests sent to the legacy bridge.
+    depth_publish_period_s: 0.25
+    depth_publish_change_m: 0.01
+
+    # Safe by default. competition_shadow.launch.py overrides these and routes
+    # every intent topic under /auv/shadow/*; it never launches the ROV bridge.
+    shadow_mode: false
+    shadow_auto_start: false
+    shadow_assume_initial_depth: false
+    shadow_log_rate_hz: 2.0
+    use_legacy_objects3d: false
+    objects_topic: /zed/objects3d
+    ball_observations_topic: /auv/perception/ball_observations
+    gate_pose_observations_topic: /auv/perception/gate_pose_observations
+
+dual_model_perception:
+  ros__parameters:
+    # Launch arguments normally override these two paths on the Jetson.
+    detector_model_path: ""
+    gate_pose_model_path: ""
+    image_topic: /zed/zed_node/left/image_rect_color
+    depth_topic: /zed/zed_node/depth/depth_registered
+    camera_info_topic: /zed/zed_node/left/camera_info
+    target_ball_color: red
+    red_ball_class: red_ball
+    blue_ball_class: blue_ball
+    gate_class: gate
+    inference_device: "0"
+    inference_imgsz: 640
+    use_half_precision: true
+    ball_confidence: 0.45
+    gate_confidence: 0.50
+    gate_keypoint_confidence: 0.50
+    maximum_depth_m: 8.0
+    depth_max_age_s: 0.20
+    depth_roi_fraction: 0.30
+    # Competition nominal dimensions are about 70 x 50 cm. Enable PnP only
+    # after confirming the labelled corner convention and underwater camera
+    # calibration/reprojection error.
+    enable_gate_pnp: false
+    gate_width_m: 0.70
+    gate_height_m: 0.50
+    maximum_reprojection_error_px: 12.0
+    publish_debug_image: true
+    debug_jpeg_quality: 80
+
+zed_sdk_source:
+  ros__parameters:
+    image_topic: /zed/zed_node/left/image_rect_color
+    depth_topic: /zed/zed_node/depth/depth_registered
+    camera_info_topic: /zed/zed_node/left/camera_info
+    frame_id: zed_left_camera_optical_frame
+    camera_resolution: HD720
+    camera_fps: 30
+    # 15 Hz reduces intra-host RGB-D serialization load while preserving enough
+    # visual-servo update rate; the inference subscriber always keeps newest only.
+    publish_fps: 15.0
+    depth_mode: NEURAL_LIGHT
+    depth_minimum_m: 0.15
+    depth_maximum_m: 8.0
+    maximum_consecutive_errors: 30

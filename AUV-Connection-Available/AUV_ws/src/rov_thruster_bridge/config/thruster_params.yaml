@@ -1,0 +1,43 @@
+/**:
+  ros__parameters:
+    # Embedded rov-master HTTP/JSON-RPC endpoint.
+    rov_host: "192.168.137.219"
+    rov_port: 8888
+    rpc_timeout_s: 0.20
+
+    # Communication and freshness limits. The reviewed auvmaster 2.x firmware
+    # separately stops after a 3000 ms status-heartbeat timeout.
+    send_rate_hz: 20.0
+    telemetry_rate_hz: 10.0
+    # Disabled in normal operation. Bench launch enables this RPC readback.
+    propeller_feedback_rate_hz: 0.0
+    command_timeout_s: 0.30
+    telemetry_timeout_s: 0.50
+    reconnect_interval_s: 1.0
+
+    # Reject absolute depth requests outside the safe competition envelope.
+    # Adjust after measuring the full robot height and sensor installation.
+    minimum_depth_m: 0.15
+    maximum_depth_m: 1.10
+
+    # These permit target-changing RPC calls only. auvmaster 2.x automatically
+    # holds each valid sensor axis when its manual command is zero.
+    onboard_depth_hold_enabled: false
+    onboard_direction_hold_enabled: false
+
+    # ROS上层统一使用“向下为正”的深度；当前auvmaster 2.x内部向下为负。
+    # 若底层团队以后改成向下为正，只需将这里改为1.0。
+    sensor_sign.depth: -1.0
+
+    # /auv/control_command Wrench values at which the embedded normalized axis
+    # reaches +/-1. Defaults match the existing auv_pid_tracker limits.
+    command_limits.max_surge: 100.0
+    command_limits.max_sway: 100.0
+    command_limits.max_heave: 250.0
+    command_limits.max_yaw: 30.0
+
+    # Change only after a restrained, one-axis-at-a-time direction test.
+    axis_sign.surge: 1.0
+    axis_sign.sway: 1.0
+    axis_sign.heave: 1.0
+    axis_sign.yaw: 1.0

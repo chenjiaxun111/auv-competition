@@ -1,0 +1,10 @@
+*.deb
+*.gv
+frames_*.gv
+*.pdf
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+install/
+log/

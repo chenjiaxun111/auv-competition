@@ -1,0 +1,8 @@
+source=/home/auv/zed_datasets/20260928-153741-test1/raw.svo2
+source_frames=9415
+image_count=942
+every_n=10
+jpeg_quality=95
+fps=30
+resolution=1280x720
+view=left

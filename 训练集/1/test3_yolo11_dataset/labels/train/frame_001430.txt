@@ -1,0 +1,1 @@
+/home/cjx/cjx_project/auv比赛/训练集/1/yolo_frames_n10_q95-3/yolo_frames_n10_q95/labels/frame_001430.txt

@@ -1,0 +1,13 @@
+session=20260926-220904-pool_ball_gate
+tag=pool_ball_gate
+started_local=2026-09-26T22:09:04+08:00
+hostname=auv-desktop
+resolution=HD720
+fps=30
+compression_mode=2
+duration_s=600
+target_frames=18000
+recorder=/usr/local/bin/ZED_Explorer
+format=SVO2
+contains=raw_stereo_camera_stream_and_zed_sensor_metadata
+stopped_local=2026-09-26T22:09:24+08:00

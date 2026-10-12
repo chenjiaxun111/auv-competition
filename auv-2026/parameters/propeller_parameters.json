@@ -1,0 +1,53 @@
+{
+    "_comment": "六路推进器参数，deadzone为死区，power为动力比例，reversed为方向反转，enabled为启用开关",
+    "propeller_parameters": {
+        "back_left": {
+            "deadzone_lower": 0,
+            "deadzone_upper": 0,
+            "enabled": true,
+            "power_negative": 0.75,
+            "power_positive": 0.75,
+            "reversed": false
+        },
+        "back_right": {
+            "deadzone_lower": 0,
+            "deadzone_upper": 0,
+            "enabled": true,
+            "power_negative": 0.75,
+            "power_positive": 0.75,
+            "reversed": false
+        },
+        "center_left": {
+            "deadzone_lower": 0,
+            "deadzone_upper": 0,
+            "enabled": true,
+            "power_negative": 0.75,
+            "power_positive": 0.75,
+            "reversed": false
+        },
+        "center_right": {
+            "deadzone_lower": 0,
+            "deadzone_upper": 0,
+            "enabled": true,
+            "power_negative": 0.75,
+            "power_positive": 0.75,
+            "reversed": false
+        },
+        "front_left": {
+            "deadzone_lower": 0,
+            "deadzone_upper": 0,
+            "enabled": true,
+            "power_negative": 0.75,
+            "power_positive": 0.75,
+            "reversed": false
+        },
+        "front_right": {
+            "deadzone_lower": 0,
+            "deadzone_upper": 0,
+            "enabled": true,
+            "power_negative": 0.75,
+            "power_positive": 0.75,
+            "reversed": false
+        }
+    }
+}
